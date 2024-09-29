@@ -16,7 +16,7 @@ app.use(cookieParser());
 app.use(express.json());
 app.use('/api/', routes);
 
-
+app.get('/health', (req, res) => res.status(200).send('OK'));
 app.use(function (req, res, next) {
   res.setHeader("Content-Type", "application/json");
   res.setHeader("Access-Control-Allow-Origin", "*");
